@@ -17,9 +17,30 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".NeverEndingService"
+        <service
+            android:name=".NeverEndingService"
             android:exported="true"
-            android:stopWithTask="false"/>
+            android:stopWithTask="false" />
+
+        <receiver
+            android:name=".AlarmReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:label="AlarmReceiver">
+            <intent-filter>
+                <action android:name="com.sadikul.NeverEndingService.service.restart" />
+                <action android:name="com.remote.connectivity.Receiver.RestartSensor" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".MessageReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:label="AlarmReceiver">
+            <intent-filter>
+                <action android:name="com.remote.connectivity.Receiver.Message" />
+            </intent-filter>
+        </receiver>
 
     </application>
 
