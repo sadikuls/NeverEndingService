@@ -16,6 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".NeverEndingService"
+            android:exported="true"
+            android:stopWithTask="false"/>
+
     </application>
 
 </manifest>
