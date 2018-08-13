@@ -29,7 +29,7 @@
             android:label="AlarmReceiver">
             <intent-filter>
                 <action android:name="com.sadikul.NeverEndingService.service.restart" />
-                <action android:name="com.remote.connectivity.Receiver.RestartSensor" />
+                <action android:name="com.sadikul.NeverEndingService.Receiver.RestartSensor" />
             </intent-filter>
         </receiver>
         <receiver

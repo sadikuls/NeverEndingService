@@ -36,15 +36,7 @@ public class NeverEndingService extends Service {
     @Override
     public void onCreate() {
 
-        this.context = this;
-        handler = new Handler();
-        handler.postDelayed(  runnable = new Runnable() {
-            public void run() {
-                sendBroadcastForMessage();
-                handler.postDelayed(runnable,2*1000);
 
-            }
-        }, 2*2000);
 
     }
 
@@ -64,7 +56,15 @@ public class NeverEndingService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        this.context = this;
+        handler = new Handler();
+        handler.postDelayed(  runnable = new Runnable() {
+            public void run() {
+                sendBroadcastForMessage();
+                handler.postDelayed(runnable,2*1000);
 
+            }
+        }, 2*2000);
 
         return START_STICKY;
     }
